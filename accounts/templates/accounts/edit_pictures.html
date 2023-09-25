@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %} Edit Profile {% endblock %}
+
+
+{% block content %}
+<form action="" class="editPictures">
+    <div class="input-group">
+        <input type="file" id="profile-img" name="profile-img">
+    </div>
+    <div class="button-group">
+        <button type="submit">Save Changes</button>
+    </div>
+</form>
+{% endblock content %}

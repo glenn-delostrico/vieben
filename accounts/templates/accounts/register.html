@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Vieben - Register</title>
+</head>
+<body>
+    <div class="register-container">
+        <div class="container">
+            <div class="register-box">
+                <div class="messages">
+                    {% for message in messages %}
+                        <h5>{{ message }}</h5>
+                    {% endfor %}
+                </div>
+                <h2>Register</h2>
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="input-group">
+                       
+                        <input type="password" id="password2" name="password2" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="input-group">
+                        <label>
+                            <input type="checkbox" name="age-terms" required>
+                            I am over 18 and agree to the <a href="#">Terms of Use</a>.
+                        </label>
+                    </div>
+                    <div class="input-group">
+                        <button type="submit">Register</button>
+                    </div>
+                </form>
+                <p class="login-link">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

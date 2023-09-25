@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %} Edit Profile {% endblock %}
+
+
+{% block content %}
+
+<section id="settings">
+    <div class="row">
+        <div class="col">
+            <div class="gallery-big-photo">
+                {% if user.profile_img %}
+                    <img src="{{ user.profile_img.url }}" alt="">
+                {% else %}
+                    <span>
+                        <a href="{% url 'edit_pictures' %}"><i class="fa-regular fa-pen-to-square"></i></a>
+                    </span>
+                    <img src="{% static 'img/default.webp' %}" alt="">
+                {% endif %}
+            </div>
+
+            <ul class="gallery-list">
+                <li>
+                </li>
+                <li>
+                    
+                </li>
+                <li>
+                    
+                </li>
+                <li>
+                    
+                </li>
+            </ul>
+
+            <hr>
+
+            <form action="" class="edit-additional-info">
+                <div class="input-group">
+                    <label>Location</label>
+                    <input type="text" id="location" name="location" placeholder="{% if user.location %}{{user.location}}{% else %}Edit Location {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label>Preffered to Meet Age</label>
+                    <input type="text" id="lf-age" name="lf-age" placeholder="{% if user.lfAge %}{{user.lfAge}}{% else %}Edit Preferred Age {% endif %}" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Willing to Relocate</label>
+                    <input type="text" id="relocate" name="relocate" placeholder="{% if user.relocate %}{{user.relocate}}{% else %}Edit Willing To Relocate {% endif %}" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-edit">Save Changes</button>
+                </div>
+            </form>          
+            
+            <form action="" class="edit-appearance">
+                <h2>Appearance</h2>
+                <div class="input-group">
+                    <label> Hair Color</label>
+                    <input type="text" id="hairColor" name="hairColor" placeholder="{% if user.hairColor %}{{user.hairColor}}{% else %}Edit Hair Color {% endif %}" required>
+                </div> 
+                
+                <div class="input-group">
+                    <label> Eye Colorr</label>
+                    <input type="text" id="eyeColor" name="eyeColor" placeholder="{% if user.eyeColor %}{{user.eyeColor}}{% else %}Edit Eye Color {% endif %}" required>
+                </div> 
+                <div class="input-group">
+                    <label>Body Type</label>
+                    <input type="text" id="bodyType" name="bodyType" placeholder="{% if user.bodyType %}{{user.bodyType}}{% else %}Edit Ethnicity {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label>Weight</label>
+                    <input type="text" id="weight" name="weight" placeholder="{% if user.weight %}{{user.weight}}{% else %}Edit Weight {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label>Height</label>
+                    <input type="text" id="height" name="height" placeholder="{% if user.height %}{{user.height}}{% else %}Edit Height {% endif %}" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-edit">Save Changes</button>
+                </div>
+            </form>
+
+            <form action="" class="edit-background">
+                <h2>Background</h2>
+                <div class="input-group">
+                    <label>Marital Status</label>
+                    <input type="text" id="marital-status" name="maritalStatus" placeholder="{% if user.maritalStatus %}{{user.maritalStatus}}{% else %}Edit Marital Status {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label>Education</label>
+                    <input type="text" id="education" name="education" placeholder="{% if user.education %}{{user.education}}{% else %}Edit Education {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label>Have Children</label>
+                    <input type="text" id="haveChildren" name="haveChildren" placeholder="{% if user.haveChildren %}{{user.haveChildren}}{% else %}Edit Have Children {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label>Want Children</label>
+                    <input type="text" id="wantChildren" name="wantChildren" placeholder="{% if user.wantChildren %}{{user.wantChildren}}{% else %}Edit Want Children {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label>Ethnicity</label>
+                    <input type="text" id="ethnicity" name="ethnicity" placeholder="{% if user.ethnicity %}{{user.ethnicity}}{% else %}Edit Ethnicity {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label>Nationality</label>
+                    <input type="text" id="Nationality" name="Nationality" placeholder="{% if user.Nationality %}{{user.Nationality}}{% else %}Edit Nationality {% endif %}" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-edit">Save Changes</button>
+                </div>
+            </form>
+
+        </div>
+        <div class="col">
+           
+            <form class="edit-password" action="" method="">
+                <h2>Change Password</h2>
+                <div class="input-group">
+                    <label for="currentPassword">Current Password</label>
+                    <input type="password" id="currentPassword" name="currentPassword" required>
+                </div>
+                <div class="input-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm New Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <input type="submit" class="btn-edit" value="Change Password">
+            </form>
+   
+            <form action="" method="POST" class="edit-basic-info">
+                <h2>Edit Basic Information</h2>
+                <div class="input-group">
+                    <label for="headline">Headline</label>
+                    <input type="text" id="headline" name="headline" placeholder="{% if user.headline %}{{user.headline}}{% else %}Edit Headline {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label for="age">Age</label>
+                    <input type="text" id="age" name="age" placeholder="{% if user.age %}{{user.age}}{% else %}Edit Age {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="{% if user.first_name %} {{user.first_name}} {% else %}Edit First name {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="{% if user.last_name %}{{user.last_name}}{% else %}Edit Last name {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="{% if user.email %}{{user.email}}{% else %}Edit Email {% endif %}" required>
+                </div>
+                <div class="input-group">
+                    <label for="bio">About</label>
+                    <textarea id="bio" name="bio" rows="4" placeholder="{% if user.bio %}{{user.bio}}{% else %}Edit Bio{% endif %}" required></textarea>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-edit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.getElementById('passwordForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Add JavaScript validation logic here
+        const currentPassword = document.getElementById('currentPassword').value;
+        const newPassword = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        // You can add more validation checks as needed
+        if (newPassword !== confirmPassword) {
+            alert("New Password and Confirm New Password do not match.");
+        } else {
+            // Submit the form or make an AJAX request to change the password
+            alert("Password changed successfully!");
+            this.reset(); // Clear the form after successful submission
+        }
+    });
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+
+{% block content %}
+
+<section id="feeds">
+    <div class="share-box">
+        <div class="row">
+            <div class="col">
+                <a href="#" class="user-icon">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#" class="btn-start-post">
+                    start a post
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+    </div>
+    <div class="feed">
+        <div class="feed-box">
+            <div class="row">
+                <div class="col">
+                    <a href="#" class="user-icon">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                </div>
+                <div class="col">
+                    <div class="feed-header">
+                        <a href="#" class="btn-follow">follow</a>
+                        <div>
+                            <span>Age, Name</span>
+                        </div>
+                        <div>
+                            <span>Location: City, State, Country</span>
+                        </div>
+                        <div>
+                            <span>
+                                Seeking: M/F Age-Age
+                            </span>
+                        </div>
+                    </div>
+                    <div class="feed-body">
+                        <ul class="interaction-list">
+                            <li>
+                                <a href="#">
+                                    <i class="fa-regular fa-thumbs-up"></i>
+                                    <span>#</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span>#</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-regular fa-message"></i>
+                                    <span>#</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa-regular fa-image"></i>
+                                    <span>#</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#" class="img-profile">
+                            <img src="{% static 'img/default.webp' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="feed-box">
+            <div class="row">
+                <div class="col">
+                    <a href="#" class="user-icon">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                </div>
+                <div class="col">
+                    <div class="feed-header">
+                        <a href="#" class="btn-follow">follow</a>
+                        <div>
+                            <span>Age, Name</span>
+                        </div>
+                        <div>
+                            <span>Location: City, State, Country</span>
+                        </div>
+                        <div>
+                            <span>
+                                Seeking: M/F Age-Age
+                            </span>
+                        </div>
+                    </div>
+                    <div class="feed-body">
+                        <ul class="interaction-list">
+                            <li>
+                                <a href="#">
+                                    <i class="fa-regular fa-thumbs-up"></i>
+                                    <span>#</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span>#</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-regular fa-message"></i>
+                                    <span>#</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa-regular fa-image"></i>
+                                    <span>#</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#" class="img-profile">
+                            <img src="{% static 'img/default.webp' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

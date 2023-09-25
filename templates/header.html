@@ -1,0 +1,43 @@
+<header>
+    <section>
+        <div class="inner">
+            <div class="row">
+                <div class="col">
+                    <div class="nav-menu"> 
+                        <a href="{% url 'home' %}" class="logo">Vieben</a>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search...">
+                        <button class="search-button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="nav-menu">
+                        <ul>
+                            <li><a href="#online">Online</a></li>
+                            <li>
+                                <a href="#matches">
+                                    Matches
+                                </a>
+                            </li>
+                            <li><a href="#live">Live</a></li>
+                            <li><a href="#notifications">Notifications</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <nav class="nav-menu">
+                        <ul>
+                            <li><a href="#messages">Messages</a></li>
+                            <li><a href="{% url 'profile' %}">Profile</a></li>
+                            <li><a href="{% url 'settings' %}">Settings</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>

@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %} {{user.first_name}} Profile {% endblock %}
+
+
+{% block content %}
+
+<section id="profile">
+    <div class="row">
+        <div class="col">
+            <div class="gallery-big-photo">
+                {% if user.profile_img %}
+                    <img src="{{ user.profile_img.url }}" alt="">
+                {% else %}
+                    <span>
+                        <a href="{% url 'edit_pictures' %}"><i class="fa-regular fa-pen-to-square"></i></a>
+                    </span>
+                    <img src="{% static 'img/default.webp' %}" alt="">
+                {% endif %}
+            </div>
+
+            <ul class="gallery-list">
+                <li>
+                </li>
+                <li>
+                    
+                </li>
+                <li>
+                    
+                </li>
+                <li>
+                    
+                </li>
+            </ul>
+
+            <!-- <ul class="interactions-gathered">
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        <span>#</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-heart"></i>
+                        <span>#</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-message"></i>
+                        <span>#</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-regular fa-image"></i>
+                        <span>#</span>
+                    </a>
+                </li>
+            </ul> -->
+
+            <hr>
+
+            <div class="additional-info">
+                <div class="input-group">
+                    <label>Location</label>
+                </div>
+                <div class="input-group">
+                    <label>Preffered to Meet Age</label>
+                </div>
+
+                <div class="input-group">
+                    <label>Willing to Relocate</label>
+                </div>
+            </div>          
+            
+            <div  class="appearance">
+                <h2>Appearance</h2>
+                <div class="input-group">
+                    <label> Hair Color</label>
+                </div> 
+                
+                <div class="input-group">
+                    <label> Eye Color</label>
+
+                </div> 
+                <div class="input-group">
+                    <label>Body Type</label>
+
+                </div>
+                <div class="input-group">
+                    <label>Weight</label>
+
+                </div>
+                <div class="input-group">
+                    <label>Height</label>
+
+                </div>
+            </div>
+
+            <div  class="background">
+                <h2>Background</h2>
+                <div class="input-group">
+                    <label>Marital Status</label>
+                </div>
+                <div class="input-group">
+                    <label>Education</label>
+                </div>
+                <div class="input-group">
+                    <label>Have Children</label>
+
+                </div>
+                <div class="input-group">
+                    <label>Want Children</label>
+
+                </div>
+                <div class="input-group">
+                    <label>Ethnicity</label>
+
+                </div>
+                <div class="input-group">
+                    <label>Nationality</label>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col">
+            <div class="basic-info">
+                <h2>About {{ user.first_name }}</h2>
+                <div class="input-group">
+                    <label for="headline">Headline</label>
+                </div>
+                <div class="input-group">
+                    <label for="age">Age</label>
+                </div>
+                <div class="input-group">
+                    <label for="first-name">First Name</label>
+                </div>
+                <div class="input-group">
+                    <label for="bio">About</label>
+                </div>
+            </div>
+            <div class="talking-to">
+                <h2>Conversations</h2>
+                <ul class="talking-to-list">
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

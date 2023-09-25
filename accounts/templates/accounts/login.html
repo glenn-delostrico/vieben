@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Vieben - Login </title>
+</head>
+<body>
+    <div class="login-container">
+
+        <div class="login-box">
+            <div class="messages">
+                {% for message in messages %}
+                    <h5>{{message}}</h5>
+                {% endfor %}
+            </div>
+            {% csrf_token %}
+            <h2>Login</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                 
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    
+                    <input type="password" id="password" name="password" placeholder="**********" required>
+                </div>
+                <div class="input-group">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+            <p class="register-link">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
